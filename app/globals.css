@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+.blur_it300 {
+    backdrop-filter: blur(100px);
+    background-color: rgba(0,0,0,0.25);
+}
+
+body {
+}
+
+.thick_text {
+    font-family: 'Bebas Neue', sans-serif;
+    background: -webkit-linear-gradient(white 5%, #008f4f 15%, transparent 90%);
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    cursor: default;
+    -webkit-text-fill-color: transparent;
+}
+
+.blur_it {
+    backdrop-filter: blur(20px);
+    background-color: rgba(0,0,0,0.23);
+}
+
+.blur_it100 {
+    backdrop-filter: blur(10px);
+}
+
+.blur_it200 {
+    backdrop-filter: blur(100px);
+}
+
+
+
+.first_circle_background {
+
+    background: rgb(51,215,216);
+    background: linear-gradient(126deg, rgba(51,215,216,1) 8%, rgba(7,158,128,1) 62%, rgba(30,164,138,1) 80%);
+}
+
+.second_circle_background {
+    background: rgb(41,108,108);
+    background: linear-gradient(135deg, rgba(41,108,108,1) 8%, rgba(64,245,210,1) 80%);
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.third_circle_background {
+    background: rgb(51,215,216);
+    background: linear-gradient(297deg, rgba(51,215,216,1) 8%, rgba(0,0,0,1) 76%, rgba(0,0,0,1) 80%);
+}
+
+
+.bt_border {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.gradient-background {
+    background: linear-gradient(324deg,#000000,#4f534e);
+    background-size: 120% 120%;
+    animation: gradient-animation 2s ease infinite;
+}
+
+.gradient-background2 {
+    background: linear-gradient(214deg,#000000,#4f534e);
+    background-size: 120% 120%;
+    animation: gradient-animation 2s ease infinite;
+}
+
+.gradient-background3 {
+    background: linear-gradient(30deg,#000000,#4f534e);
+    background-size: 120% 120%;
+    animation: gradient-animation 2s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
