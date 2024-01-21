@@ -42,8 +42,8 @@ const Page = () => {
     const backgroundColor = useTransform(scrollYProgress, [0,0.3], ["rgba(0,0,0,0)", "rgba(255,255,255,1)"])
     const dashboardOptions = [
         {title: "E-Commerce", link: "eC"},
-        {title: "Labour-Farmer Portal", link: "labour_portal"},
-        {title: "Labour-Farmer Portal", link: "labour_portal"},
+        {title: "Labour-Farmer Portal", link: "labourportal"},
+        {title: "Book Your Free Intreval", link: "bookings"},
     ]
 
     return <React.Fragment>

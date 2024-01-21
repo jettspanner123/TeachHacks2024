@@ -5,6 +5,8 @@ import {FaArrowDown} from "react-icons/fa6";
 
 export default function Home():React.JSX.Element {
     const [isReady, setReady] = React.useState(false);
+    const [language, setLanguage] = React.useState("english");
+    const [dropdownShowing, setDropdownShowing] = React.useState(false);
     return (
         <React.Fragment>
             <motion.div
@@ -56,10 +58,45 @@ export default function Home():React.JSX.Element {
                 </motion.div>
             </motion.div>
 
+
+            <div
+                onClick={() => setDropdownShowing(!dropdownShowing)}
+                className={`bg-white items-center gap-[1rem] hover:bg-transparent hover:text-white border-2 border-white text-black p-4 rounded-xl absolute top-[1rem] left-[1rem] z-[1000] text-[1.5rem] flex`}>
+                Language
+
+                <motion.div animate={{rotate: dropdownShowing ? 180 : 0}}>
+                    <FaArrowDown />
+                </motion.div>
+            </div>
+
+
+            {
+                dropdownShowing &&
+                <div
+                    onClick={() => setLanguage("english")}
+                    className={`bg-white p-4 rounded-xl text-black absolute z-[1000] left-[1rem] top-[7rem] px-[2.9rem] text-[1.5rem]`}>English
+                </div>
+            }
+
+            {
+                dropdownShowing &&
+                <div
+                    onClick={() => setLanguage("punjabi")}
+                    className={`bg-white p-4 rounded-xl text-black absolute z-[1000] left-[1rem] top-[12rem] px-[2.9rem] text-[1.5rem]`}>Punjabi
+                </div>
+            }
+            {
+                dropdownShowing &&
+                <div
+                    onClick={() => setLanguage("hindi")}
+                    className={`bg-white p-4 rounded-xl text-black absolute z-[1000] left-[1rem] top-[17rem] px-[3.4rem] text-[1.5rem]`}>Hindi
+                </div>
+            }
             <main
                 className={`absolute overflow-hidden z-[10] top-0 left-0 w-screen h-[300vh] flex justify-start pt-[10rem] flex-col items-center min-w-screen blur_it300`}>
                 <motion.h1
-                    className={`text-white text-[12rem] font-bold`}>HALCHALL
+                    className={`text-white text-[12rem] font-bold`}>
+                    {language === "hindi" ? "हलचल" : language === "punjabi" ? "ਹਲਚਲ" : "HALCHALL"}
                 </motion.h1>
                 <motion.h1
                     animate={{
@@ -72,7 +109,8 @@ export default function Home():React.JSX.Element {
                         duration: 2,
                         delay: 3
                     }}
-                    className={`text-white text-[3rem] font-bold`}>Where Agriculture Meets Innovation
+                    className={`text-white text-[3rem] font-bold`}>
+                    {language === "punjabi" ? "ਜਿੱਥੇ ਖੇਤੀ ਨਵੀਨਤਾ ਨੂੰ ਪੂਰਾ ਕਰਦੀ ਹੈ" : language === "english" ? "Where Agriculture Meets Innovation" : "जहां कृषि नवाचार से मिलती है"}
                 </motion.h1>
                 <h1 onClick={() => setReady(true)}
                     className={`text-[2rem] p-4 rounded-xl flex items-center gap-[1.5rem] bg-white mt-[3rem] text-black `}>
